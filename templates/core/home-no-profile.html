@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block page_content %}
 
 <!--Home Page-->
 <div class="container-inline">
@@ -17,18 +19,12 @@
         <form>
             <fieldset>
                 <legend>Profile</legend>
-                <!-- Form for Registration -->
-                <label for="username">Username:</label>
-                <input id="username" name="username" type="text" placeholder="Username">
-
-                <label for="email">Email:</label>
-                <input id="email" name="email" type="email" placeholder="Email">
-
-                <label for="age">Age:</label>
-                <input id="age" name="age" type="number" min="0" placeholder="Age">
-                <!-- Button to Create Profile -->
+                {{ form }}
                 <button type="submit" class="register">Enter</button>
+                {% csrf_token %}
             </fieldset>
         </form>
     </section>
 </div>
+
+{% endblock %}
